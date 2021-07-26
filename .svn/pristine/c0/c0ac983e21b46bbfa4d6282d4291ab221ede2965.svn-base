@@ -1,0 +1,43 @@
+{
+  "msg": "数据获取成功",
+  "total": 3,
+  "code": 0,
+  "records": 3,
+  "rows": [
+    {
+      "index" : "A",
+      "colunm1": "A街道",
+      "colunm2": "",
+      "lng":119.23,
+      "lat":27.2,
+      "iconname":"A街道",
+      "url":"/imgs/icon-location1.png",
+      "iconWidth": 29,
+      "iconHeight": 40
+    },{
+      "index" : "B",
+      "colunm1": "B街道",
+      "colunm2": "8KM",
+      "lng":120.23,
+      "lat":27.8,
+      "iconname":"B街道",
+      "url":"/imgs/icon-location1.png",
+      "iconWidth": 29,
+      "iconHeight": 40
+    },{
+      "index" : "C",
+      "colunm1": "C街道",
+      "colunm2": "18KM",
+      "column3":"福建省莆田市秀屿区A街道福建省莆田市秀屿区A街道",
+      "column4": "2020-03-10 05:44:24",
+      "column5":"26.86°",
+      "column6":"119.54°",
+      "lng":121.23,
+      "lat":26.2,
+      "iconname":"C街道",
+      "url":"/imgs/icon-location1.png",
+      "iconWidth": 29,
+      "iconHeight": 40
+    }
+  ]
+}

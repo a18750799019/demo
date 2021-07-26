@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>经济损失图例</title>
+    <style>
+        body {
+            margin: 5px;
+        }
+
+        .div_main {
+            width: 100%;
+            height: 100%;
+        }
+
+        .div_main .item {
+            width: 100%;
+            height: 20px;
+            float: left;
+            margin-top: 5px;
+        }
+
+        .div_main .item .item_color {
+            width: 40%;
+            height: 100%;
+            float: left;
+            border: 1px solid #000000;
+        }
+
+        .div_main .item .item_val {
+            width: 50%;
+            height: 100%;
+            float: left;
+            margin-left: 10px;
+            line-height: 26px;
+        }
+
+        .div_main .item .item_val label {
+            font-size: 16px;
+        }
+
+    </style>
+</head>
+<body>
+<div class="div_main">
+    <div class="item">
+        <div class="item_color" style="background-color: #6B0602;">
+        </div>
+        <div class="item_val">
+            <label><b>&gt;1亿元</b></label>
+        </div>
+    </div>
+    <div class="item">
+        <div class="item_color" style="background-color: #9B460F;">
+        </div>
+        <div class="item_val">
+            <label><b>&lt;1亿元</b></label>
+        </div>
+    </div>
+    <div class="item">
+        <div class="item_color" style="background-color: #D98224;">
+        </div>
+        <div class="item_val">
+            <label><b>&gt;1,000万元</b></label>
+        </div>
+    </div>
+    <div class="item">
+        <div class="item_color" style="background-color: #F4BA44;">
+        </div>
+        <div class="item_val">
+            <label><b>&lt;100万元</b></label>
+        </div>
+    </div>
+    <div class="item">
+        <div class="item_color" style="background-color: #F8DF62;">
+        </div>
+        <div class="item_val">
+            <label><b>&lt;10万元</b></label>
+        </div>
+    </div>
+    <div class="item">
+        <div class="item_color" style="background-color: #FFFFFF;">
+        </div>
+        <div class="item_val">
+            <label><b>0</b></label>
+        </div>
+    </div>
+    <div class="item">
+        <div style="width: 22px; height: 22px; float: left; background-color: #ffffff; border: 1px solid #000000;">
+        </div>
+        <div class="item_val">
+            <label><b>5 x 5 公里</b></label>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+@mixin font-size($value) {
+  font-size: $value;
+}
+
+@mixin bg_color($bg) {
+  background-color:$bg;
+  [data-theme="white"] & {
+    background-color: $background-color-theme-white;
+  }
+}
+
+@mixin tab_bg_color($bg) {
+  background-color:$bg;
+  [data-theme="white"] & {
+    background-color: $tab-selected-background-color-theme-white;
+  }
+}
+
+@mixin bg_noselected_bg_color($bg) {
+  background-color:$bg;
+  [data-theme="white"] & {
+    background-color: $tab-unselected-background-color-theme-white;
+  }
+}
+
+@mixin font_color($color) {
+  color: $color-theme-default;
+  [data-theme="white"] & {
+    color: $color-theme-white;
+  }
+}
+
+@mixin font_border($color) {
+  border: 2px solid $color;
+  [data-theme="white"] & {
+    border: 2px solid $tab-selected-background-color-theme-white;
+  }
+}

@@ -1,0 +1,210 @@
+.ds-main-container{
+  height: 100%;
+  position: relative;
+  
+}
+
+
+.header{
+  height: $head-height;
+  //min-width: 1200px;
+  overflow: hidden;
+  background-color: #004b98;
+  background-image: url("/imgs/top.png");
+  // background-size: 100% 100%;
+  background-position: left center;
+  background-repeat: no-repeat;
+  //@include bg_color($background-color-theme-default);
+  .center{
+    width:400px;
+    height: inherit;
+    vertical-align: middle;
+    @include font_color($color-theme-default);
+    line-height: $head-height;
+    font-size: 24px;
+    display: inline-block;
+    z-index: 999;
+    padding-left: 7px;
+    img{
+      vertical-align: middle;
+      margin-right: 21px;
+    }
+  }
+  .right{
+    float: right;
+    // width:683px;
+    font-size: 12px;
+    height: inherit;
+    @include font_color($color-theme-default);
+    ul{
+      display: inline-block;
+      li{
+        vertical-align: middle;
+        display: inline-block;
+        background: url("/imgs/icon-menu-unseleted-form.png") no-repeat;
+        background-size: 100% 100%;
+        margin:5px 7px;
+        width:$head-height;
+        height:60px;
+        text-align: center;
+        @include font_color($color-theme-default);
+        cursor: pointer;
+        div{
+          line-height: 35px;
+        }
+        img{
+          position: relative; 
+          top:8px;
+        }
+      }
+      li.on {
+        background: url("/imgs/icon-menu-seleted-form.png") no-repeat;
+        background-size: 100% 100%;
+      }
+    }
+    .date{
+      width: 145px;
+      background: rgba(0,0,0,0.4);
+      height: $head-height;
+      display: inline-block;
+      vertical-align: middle;
+      text-align: center;
+      margin-left: 1px;
+      .time{
+        font-size: 30px;
+        margin-top: 8px;
+      }
+      .week{
+        font-size: 14px;
+      }
+    }
+    .user,.skin{
+      width: 100px;
+      height: 100%;
+      vertical-align: middle;
+      text-align: center;
+      display: inline-block;
+      font-size: 13px;
+      background: rgba(0,0,0,0.2);
+      img{
+        position: relative; 
+        top:10px;
+      }
+      div{
+        line-height: 40px;
+        white-space: nowrap;
+        margin:0 5px;
+        overflow: hidden;
+      }
+    }
+    .skin,.user{
+      // margin-left: 1px;
+      .dropdownText{
+        @include font_color($color-theme-default);
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.mockDialog{
+  ::v-deep .el-dialog__body{
+    height: 319px;
+    width: 633px;
+    padding-top: 31px;
+  }
+  ::v-deep .el-form{
+    //margin-top: 31px;
+    margin-left: 27px;
+  }
+  ::v-deep .el-input__inner{
+    height: 31px;
+  }
+  .datePicker  ::v-deep .el-input__inner{
+    width: 250px;
+  }
+  .citySelect ::v-deep .el-input__inner{
+    width: 120px;
+  }
+  .countrySelect ::v-deep .el-input__inner{
+    width: 120px;
+  }
+  .addressDetail ::v-deep .el-input__inner{
+    width: 231px;
+  }
+  .longitudeInput ::v-deep .el-input__inner{
+    width: 120px;
+  }
+  .latitudeInput ::v-deep .el-input__inner{
+    width: 120px;
+  }
+  .latitude{
+    margin-left: 40px;
+  }
+  .magnitude{
+    margin-left: -3px;
+  }
+  .magnitudeInput ::v-deep .el-input__inner{
+    width: 120px;
+  }
+  .focusInput ::v-deep .el-input__inner{
+    width: 120px;
+  }
+  .focus{
+    margin-left: 15px;
+  }
+  .kilometer {
+    margin-left: -6px;
+  }
+  .level {
+    margin-left: -6px;
+  }
+  .mapSelect{
+    width:100px;
+    height:30px;
+    line-height: 5px;
+    margin-left: 8px;
+    @include bg_color(#409eff);
+    border:none;
+  }
+}
+
+.statisSearch{
+  @include bg_color(#0099FF);
+  border:none;
+}
+.mockEaBtn{
+  @include bg_color(#2A67AB);
+  border:none;
+}
+.diaFooter{
+  height: 40px;
+  line-height: 40px;
+  @include bg_color(#2A68AC);
+  color: #fff;
+  text-align: center;
+  border-radius: 0 0 5px 5px;
+}
+
+::v-deep .el-tabs{
+  .is-active{
+    @include tab_bg_color($tab-selected-background-color-theme-default);
+  }
+}
+
+
+.is-ddl-active{
+  color:#66b1ff;
+  background-color: #ecf5ff;
+}
+
+.diaStaDDL{
+  width:120px;
+  ::v-deep .el-input__inner{
+    height:31px;
+    line-height: 31px;
+  }
+  ::v-deep .el-input__icon{
+    line-height: 31px;
+  }
+}

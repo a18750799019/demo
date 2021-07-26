@@ -1,0 +1,32 @@
+{
+  "msg": "数据获取成功",
+  "total": 3,
+  "code": 0,
+  "records": 3,
+  "rows": [
+    {
+      "column1": "福建省地震局",
+      "column2": "后期保障人员",
+      "column3": "李记",
+      "column4": "男",
+      "column5": "17837276829",
+      "column6": "liji@aliyun.com"
+    },
+    {
+      "column1": "福建省地震局",
+      "column2": "后期保障人员",
+      "column3": "李记",
+      "column4": "男",
+      "column5": "17837276829",
+      "column6": "liji@aliyun.com"
+    },
+    {
+      "column1": "平潭综合试验区",
+      "column2": "其他",
+      "column3": "李记",
+      "column4": "男",
+      "column5": "17837276829",
+      "column6": "liji@aliyun.com"
+    }
+  ]
+}

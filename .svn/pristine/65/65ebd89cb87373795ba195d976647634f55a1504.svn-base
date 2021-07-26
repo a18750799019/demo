@@ -1,0 +1,53 @@
+{
+  "msg": "数据获取成功",
+  "total": 64,
+  "code": 0,
+  "records": 120,
+  "rows": [
+    {
+      "value" : "福建省",
+      "label": "福建省",
+      "children": [{
+        "value":"福州市",
+        "label":"福州市",
+        "children":[{
+          "value":"连江县",
+          "label":"连江县"
+        },{
+          "value":"闽侯县",
+          "label":"闽侯县"
+        },{
+          "value":"仓山区",
+          "label":"仓山区"
+        }]
+      },{
+        "value":"厦门市",
+        "label":"厦门市"
+      },{
+        "value":"漳州市",
+        "label":"漳州市"
+      },{
+        "value":"南平市",
+        "label":"南平市"
+      },{
+        "value":"三明市",
+        "label":"三明市"
+      },{
+        "value":"龙岩市",
+        "label":"龙岩市"
+      },{
+        "value":"泉州市",
+        "label":"泉州市"
+      },{
+        "value":"宁德市",
+        "label":"宁德市"
+      }]
+     
+    }, {
+      "value" : "浙江省",
+      "label": "浙江省",
+      "children": []
+     
+    }
+  ]
+}

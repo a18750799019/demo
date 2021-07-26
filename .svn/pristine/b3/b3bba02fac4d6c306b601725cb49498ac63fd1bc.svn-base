@@ -1,0 +1,33 @@
+{
+  "msg": "数据获取成功",
+  "total": 2,
+  "code": 0,
+  "records": 2,
+  "rows": [{
+    "index":"1",
+    "name": "仁爱医院",
+    "distance": "0.25",
+    "type": "医院" ,
+    "lng":125.2,
+    "lat": 28,
+    "color":"red",
+    "url":"/imgs/icon-liveLine.png",
+    "iconWidth":20,
+    "iconHeight":20,
+    "fontSize":"10pt",
+    "pixelOffset":[-11,0]
+  },{
+    "index":"2",
+    "name": "中心小学",
+    "distance": "0.5",
+    "type": "学校" ,
+    "lng":125.2,
+    "lat": 27,
+    "color":"yellow",
+    "url":"/imgs/icon-liveLine.png",
+    "iconWidth":20,
+    "iconHeight":20,
+    "fontSize":"10pt",
+    "pixelOffset":[-11,0]
+  }]
+}

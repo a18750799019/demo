@@ -1,0 +1,37 @@
+{
+  "msg": "数据获取成功",
+  "total": 3,
+  "code": 0,
+  "records": 3,
+  "rows": [
+    {
+      "index" : "1",
+      "column1": "福州市",
+      "column2": "鼓楼区",
+      "column3":"和平街道",
+      "column4":3.5,
+      "column5":32,
+      "column6":162,
+      "column7":876
+    },{
+      "index" : "2",
+      "column1": "福州市",
+      "column2": "晋安区",
+      "column3":"XX街道",
+      "column4":13.5,
+      "column5":1,
+      "column6":12,
+      "column7":1876
+    },
+    {
+      "index" : "3",
+      "column1": "福州市",
+      "column2": "台江区",
+      "column3":"YY街道",
+      "column4":13.5,
+      "column5":332,
+      "column6":1622,
+      "column7":8276
+    }
+  ]
+}

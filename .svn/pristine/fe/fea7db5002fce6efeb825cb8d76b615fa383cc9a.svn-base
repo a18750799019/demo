@@ -1,0 +1,160 @@
+{
+  "usable": "api",
+  "areacode":{
+    "desc": "行政区划表",
+    "debug": "/config/areacode.json",
+    "release": "/config/areacode.json"
+  },
+  "collentionList":{
+    "desc": "采集列表",
+    "debug": "/api/quakesCollect/list",
+    "release": "/api/quakesCollect/list"
+  },
+  "ealist":{
+    "desc": "地震列表",
+    "debug": "/api/quakes/list",
+    "release": "/api/quakes/list"
+  },
+  "eaAdd":{
+    "desc": "模拟地震上报",
+    "debug": "/api/quakes/add",
+    "release": "/api/quakes/add"
+  },
+  "eaItemDetail":{
+    "desc": "单个地震上报列表",
+    "debug": "/mock/eaItemDetail.json",
+    "release": "/mock/eaItemDetail.json"
+  },
+  "liveLineList":{
+    "desc": "生命线列表",
+    "debug": "/mock/addressSearch.json",
+    "release": "/mock/addressSearch.json"
+  },
+  "disasterStatistics":{
+    "desc": "灾情统计",
+    "debug": "/mock/disasterStatistics.json",
+    "release": "/mock/disasterStatistics.json"
+  },
+  "depUser":{
+    "desc": "部门及联系人管理",
+    "debug": "/api/dept/list?isDel=0",
+    "release": "/api/dept/list?isDel=0"
+  },
+  "allDeptList":{
+    "desc": "部门下拉列表",
+    "debug": "/api/dept/listAll?isDel=0",
+    "release": "/api/dept/listAll?isDel=0"
+  },
+  "delDepUser":{
+    "desc": "删除部门",
+    "debug": "/api/dept/del",
+    "release": "/api/dept/del"
+  },
+  "addDept":{
+    "desc": "添加部门",
+    "debug": "/api/dept/add",
+    "release": "/api/dept/add"
+  },
+  "editDepUser":{
+    "desc": "编辑部门",
+    "debug": "/api/dept/edit",
+    "release": "/api/dept/edit"
+  },
+  "user":{
+    "desc": "联系人列表",
+    "debug": "/api/user/list?isDel=0",
+    "release": "/api/user/list?isDel=0"
+  },
+  "addUser":{
+    "desc": "添加人员",
+    "debug": "/api/user/add",
+    "release": "/api/user/add"
+  },
+  "editUser":{
+    "desc": "编辑人员",
+    "debug": "/api/user/edit",
+    "release": "/api/user/edit"
+  },
+  "delUser":{
+    "desc": "删除人员",
+    "debug": "/api/user/del",
+    "release": "/api/user/del"
+  },
+  "sysUser":{
+    "desc": "系统联系人列表",
+    "debug": "/api/user/list?isDel=0&enable=0",
+    "release": "/api/user/list?isDel=0&enable=0"
+  },
+  "mapApi":{
+    "desc":"地图逆编码",
+    "debug":"http://api.tianditu.gov.cn/geocoder?postStr={'lon':#{lon},'lat':#{lat},'ver':1}&type=geocode&tk=0b4ef5d9b6efb70331897fe81c6d1bfd",
+    "release":"http://api.tianditu.gov.cn/geocoder?postStr={'lon':#{lon},'lat':#{lat},'ver':1}&type=geocode&tk=0b4ef5d9b6efb70331897fe81c6d1bfd"
+  },
+  "addressSearch":{
+    "desc":"地址查询--http://api.tianditu.gov.cn/search?postStr={%22keyWord%22:%22%E5%8C%BB%E9%99%A2%22,%22level%22:%225%22,%22mapBound%22:%22115.4,23.3,120.3,39.93138%22,%22queryType%22:%223%22,%22pointLonlat%22:%22117.4,25.3%22,%22queryRadius%22:%225000%22,%22count%22:%2220%22,%22start%22:%220%22}&type=query&tk=0b4ef5d9b6efb70331897fe81c6d1bfd",
+    "debug":"http://api.tianditu.gov.cn/search?postStr={'keyWord':'#{keyword}','level':'5','mapBound':'110.4,20.3,125.3,45.93138','queryType':'3','pointLonlat':'#{lonlat}','queryRadius':'#{radius}','count':'10','start':'0'}&type=query&tk=0b4ef5d9b6efb70331897fe81c6d1bfd",
+    "release":"http://api.tianditu.gov.cn/search?postStr={'keyWord':'#{keyword}','level':'5','mapBound':'115.4,23.3,120.3,39.93138','queryType':'3','pointLonlat':'#{lonlat}','queryRadius':'#{radius}','count':'10','start':'0'}&type=query&tk=0b4ef5d9b6efb70331897fe81c6d1bfd"
+  },
+  "login":{
+    "desc":"登录验证",
+    "debug":"/api/login/login",
+    "release":"/api/login/login"
+  },
+  "loginout":{
+    "desc":"退出",
+    "debug":"/api/login/logout",
+    "release":"/api/login/logout"
+  },
+  "editPassword":{
+    "desc": "修改密码",
+    "debug": "/api/user/updatePassword",
+    "release": "/api/user/updatePassword"
+  },
+  "lifeLine":{
+    "desc":"生命线",
+    "debug":"/api/lifeLine/list",
+    "release":"/api/lifeLine/list"
+  },
+  "callphone":{
+    "desc":"拨打电话",
+    "debug_bak":"/api/quakesCollect/push",
+    "debug":"http://192.168.200.132:8015/api/quakesCollect/push",
+    "release":"/api/quakesCollect/push"
+  },
+  "getZspdf":{
+    "desc":"pdf",
+    "debug":"/api/quakesAtt/listAtt",
+    "release":"/api/quakesAtt/listAtt"
+  },
+  "deleteZspdf":{
+    "desc":"pdf",
+    "debug":"/api/quakesAtt/del",
+    "release":"/api/quakesAtt/del"
+  },
+  "zsMethod":{
+    "desc":"灾损统计|?seismNo=",
+    "debug":"/api/quakes/findHaCount",
+    "release":"/api/quakes/findHaCount"
+  },
+  "zsTotal":{
+    "desc":"灾损统计|?parentRegionId=3501",
+    "debug":"/api/quakes/findHaTotal",
+    "release":"/api/quakes/findHaTotal"
+  },
+  "mockea_one":{
+    "desc":"模拟地震 （一期接口）",
+    "debug":"/api/quakes/executeSim",
+    "release1":"/fjseism/ha2/ss/executeSim",
+    "release":"/api/quakes/executeSim"
+  },
+  "fileUpload":{
+    "desc":"文件上传",
+    "debug":"/api/quakesAtt/upload", 
+    "release":"/api/quakesAtt/upload"
+  },
+  "fileDownload":{
+    "desc":"文件下载",
+    "debug":"/api/quakes/download", 
+    "release":"/api/quakes/download"
+  }
+}

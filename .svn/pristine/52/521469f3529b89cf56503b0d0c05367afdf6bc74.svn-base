@@ -1,0 +1,62 @@
+{
+  "msg": "数据获取成功",
+  "total": 13,
+  "code": 0,
+  "records": 13,
+  "rows": [{
+      "index" : 1,
+      "column1": 6,
+      "column2": "21KM",
+      "column3":"福建省莆田市秀屿区A街道",
+      "column4": "2020-03-10 05:44:24",
+      "column5":26.8,
+      "column6":119.54,
+      "color":"yellow",
+      "diameter": 10,
+      "lat":26.86,
+      "lng":119.54,
+      "pixelOffset":[-10,18]
+    },{
+      "index" : 4,
+      "column1": 2,
+      "column2": "21KM",
+      "column3":"福建省莆田市秀屿区A街道",
+      "column4": "2020-03-10 05:44:24",
+      "column5":28.8,
+      "column6":117.54,
+      "color":"yellow",
+      "diameter": 10,
+      "lat":28.8,
+      "lng":117.54,
+      "pixelOffset":[-10,18]
+    },
+    {
+      "index" : 2,
+      "column1": 3,
+      "column2": "18KM",
+      "column3":"福建省莆田市XX区B街道",
+      "column4": "2020-06-10 05:44:24",
+      "column5":28.86,
+      "column6":119.54,
+      "color":"red",
+      "diameter": 10,
+      "lat":28.86,
+      "lng":119.54,
+      "pixelOffset":[-10,18]
+    },
+    {
+      "index" : 3,
+      "column1": 9,
+      "column2": "18KM",
+      "column3":"福建省莆田市YY区C街道",
+      "column4": "2020-03-10 05:44:24",
+      "column5":26.86,
+      "column6":120.54,
+      "color":"red",
+      "diameter": 10,
+      "lat":26.86,
+      "lng":120.54,
+      "pixelOffset":[-10,23]
+    }
+  ]
+}

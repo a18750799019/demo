@@ -1,0 +1,42 @@
+{
+  "msg": "数据获取成功",
+  "total": 3,
+  "code": 0,
+  "records": 3,
+  "rows": [
+    {
+      "column1": "zbb-dfd",
+      "column2": "张三",
+      "column3": "男",
+      "column4": "福州市",
+      "column5": "鼓楼",
+      "column6": "福建省地震局",
+      "column7": "后期保障人员",
+      "column8": "18987632923",
+      "column9": "liji@aliyun.com",
+      "column10": "2020-06-11 11:12:12"
+    },{
+      "column1": "zbb-dfd",
+      "column2": "李四",
+      "column3": "男",
+      "column4": "福州市",
+      "column5": "鼓楼",
+      "column6": "福建省地震局",
+      "column7": "后期保障人员",
+      "column8": "18987632923",
+      "column9": "liji@aliyun.com",
+      "column10": "2020-06-11 11:12:12"
+    },{
+      "column1": "zbb-dfd",
+      "column2": "王五",
+      "column3": "男",
+      "column4": "福州市",
+      "column5": "鼓楼",
+      "column6": "福建省地震局",
+      "column7": "后期保障人员",
+      "column8": "18987632923",
+      "column9": "liji@aliyun.com",
+      "column10": "2020-06-11 11:12:12"
+    }
+  ]
+}

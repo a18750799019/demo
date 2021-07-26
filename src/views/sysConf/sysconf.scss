@@ -1,0 +1,140 @@
+.sysContainer {
+  // height: calc(100% - #{$head-height});
+  height: 100%;
+  background: #EFF0F3;
+  .backMap{
+    position: fixed;
+    top: 74px;
+    line-height: 20px;
+    right: 10px;
+    z-index: 100;
+    color: #0099FF;
+    font-size: 13px;
+    cursor: pointer;
+    border: solid 1px #0099FF;
+    border-radius: 3px;
+    padding: 0 10px;
+  }
+  .sysCont{
+    height: calc(100% - #{$head-height});
+    .depTree{
+      height: calc(100vh - 105px);
+      width: 180px;
+      background: #F3F4F9;
+      vertical-align: top;
+    }
+    .deptFrom,.userForm{
+      height: calc(100vh - 105px);
+      width:calc(50% - 90px - 24px);
+      background: #fff;
+      vertical-align: top;
+      padding:10px;
+    }
+    .deptFrom{
+      margin-right: 8px;
+    }
+    .citySelect,.countrySelect{
+      width:110px ;
+      margin-right: 4px;
+    }
+    .sectionSelect,.positionSelect{
+      width:136px ;
+      margin-right: 4px;
+    }
+    .nameInput{
+      width: 100px;
+    }
+    ::v-deep .el-input__inner{
+      height:31px;
+    }
+    ::v-deep .el-input__icon{
+      line-height: 31px;
+    }
+    .search{
+      width: 100px;
+      height: 30px;
+      @include bg_color(#0099FF);
+      color:#fff;
+      line-height: 5px;
+      float:right;
+    }
+  }
+}
+.searchCondition ::v-deep .el-input__inner{
+  height:30px;
+}
+.searchButton{
+  width: 100px;
+  height: 30px;
+  @include bg_color(#0099FF);
+  color:#fff;
+  line-height: 5px;
+}
+.addSection{
+  float:right;
+  @include bg_color(#057FD2);
+  color:#fff;
+  width: 120px;
+  height: 30px;
+  line-height: 5px;
+  padding-left: 10px;
+}
+.addUser{
+  float:right;  
+  @include bg_color(#057FD2);
+  color:#fff;
+  width: 120px;
+  height: 30px;
+  line-height: 5px;
+}  
+
+.deptDialog, .userDialog, .sysUserDialog{
+  ::v-deep .el-dialog__body{
+    padding: 10px 20px 20px;
+  }
+  ::v-deep .el-input__inner{
+    height:30px;
+    width: 200px;
+  }
+  .confirm, .cancel{
+    width: 110px;
+    height: 34px;
+    border: none;
+  }
+}
+
+::v-deep .el-tabs__header{
+  margin:0;
+  padding-left: 8px;
+  .el-tabs__item{
+    border-radius: 6px 6px 0 0;
+    background:#9DA4B4;
+    color: #fff;
+    margin-right: 5px;
+    height: 30px;
+    line-height: 30px;
+  }
+
+  .el-tabs__item.is-active{
+    @include tab_bg_color(#198AFE);
+  }
+}
+
+
+::v-deep .el-tree{
+  background: none;
+  padding: 1px 5px;
+  .el-tree-node__content:hover{
+    background:#d5d5d5
+  }
+}
+
+ 
+@media screen and (max-width: 1540px) {
+  .nameInput{
+    display: none;
+  }
+  .sysContainer .sysCont .search{
+    float: initial;
+  }
+}

@@ -1,0 +1,6 @@
+.wrap{
+  height: 100%;
+  .container{
+    height: inherit;
+  }
+}

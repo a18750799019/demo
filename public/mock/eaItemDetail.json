@@ -1,0 +1,19 @@
+{
+  "msg": "数据获取成功",
+  "total": 1,
+  "code": 0,
+  "records": 1,
+  "rows": [{
+    "selectedItem":2,
+    "user":"张三",
+    "state":"离线",
+    "time":"2020-02-18 16:26:00",
+    "lat": 26.89,
+    "lng": 120.23,
+    "height": "8km",
+    "level": 3.2,
+    "location": "福建省莆田市秀屿区A街道",
+    "src":"https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg",
+    "srcList": ["https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg"]
+    }]
+}

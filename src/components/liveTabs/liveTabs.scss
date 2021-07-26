@@ -1,0 +1,213 @@
+.liveTabs{
+  
+  height: calc(100% - #{$head-height});
+  position: absolute;
+  top:$head-height;
+  background: #405780;
+  left:0;
+  .liveTabsIn{
+    width:320px;
+    height: 100%;
+  }
+  .leftCtl{
+    position: absolute;
+    width: 26px;
+    height: 66px;
+    right: -26px;
+    top:50%;
+    margin-top:-33px;
+    background-image: url("/imgs/leftSh2.png");
+  }
+  .leftCtlSwit{
+    background-image: url("/imgs/leftSh1.png");
+  }
+  .tabs {
+    .subTab{
+      height: calc(100vh - 36px - #{$head-height});
+      .searchPanle{
+        height: 60px;
+        border-bottom: 1px solid #D5D8DC;
+      }
+    }
+  }
+  .searchPanle{
+    
+    .selectItem{
+      top: 10px;
+      width: 155px;
+      margin-left: 3px;
+      height: 30px;
+    }
+    .checkboxItem{
+      top: 20px;
+      left:4px;
+      margin:0 4px;
+    }
+  }
+  .addresSearchHead{
+    .elInput{
+      top:10px;
+      width:50%;
+      margin-left: 10px;
+    }
+    .elButton{
+      top:10px;
+      position: relative;
+      margin: 0 0 0 13px;
+      // background: #1A8AFE;
+      @include tab_bg_color(#1A8AFE);
+      color: #fff;
+    }
+    .elButtonReset{
+       top:10px;
+      position: relative;
+      margin: 0 0 0 13px;
+      color: #fff;
+      background: #F49800;
+    }
+  }
+  .listPanel{
+    width: 100%;
+    height: calc(100vh - 130px - #{$head-height});
+    overflow-y: auto;
+    margin:0 auto;
+    .infoItem{
+      width:290px;
+      height:100px;
+      background:#384B6E;
+      border:1px solid #384B6E;
+      border-radius:6px;
+      margin:12px auto;
+      .leftIcon{
+        width: 40px;
+        height: 100%;
+
+        color: #fff;
+        text-align: center;
+        vertical-align: top;
+        .icon{
+          width: 22px;
+          line-height: 24px;
+          height: 31px;
+          background: url("/imgs/icon-index.png") no-repeat;
+          position: relative;
+          top:31px;
+          left:7px;
+          font-size: 14px;
+        }
+      }
+      .centerContent{
+        vertical-align: top;
+        font-size: 13px;
+        width: 49px;
+        text-align: center;
+        height:100%;
+        .subContent{
+          height:77px;
+          line-height: 77px;
+          background:#fff;
+          font-size: 21px;
+          border-radius:4px;
+          margin: 10px 0;
+        }
+      }
+      .rightContent{
+        color:#ffffff;
+        width:195px;
+        font-size: 13px;
+        padding-top:10px;
+        padding-left: 5px;
+        div{
+          line-height: 21px;
+          height: 21px;
+        }
+        .eaTitle{
+          display: inline-block;
+          max-width:155px;
+          vertical-align: top;
+        }
+        .optBtns{
+          text-align: right;
+          text-decoration: underline;
+          line-height: 27px;
+          margin-right: 5px;
+          a{
+            margin:3px 3px 0;
+            cursor: pointer;
+            color: #00FFFF;
+          }
+        }
+      }
+      .rightContent2{
+        color:#333;
+        width:calc(100% - 50px);
+        font-size: 13px;
+        padding-top:10px;
+        padding-left: 5px;
+      
+        .title{
+          color: #076CD4;
+          font-weight: bold;
+        }
+        .adressRow{
+          margin: 12px 0 8px 0; 
+          color:#fff;
+        
+        }
+        .ellipsis-one{
+          color:#fff;
+        }
+        .liveLine{
+          // background:#1A8AFE;
+          @include tab_bg_color(#1A8AFE);
+          color:#fff;
+        }
+      }
+    }
+    .infoItem:first-child{
+      margin-top:12px;
+    }
+    .infoItem.on, .infoItem:hover{
+      //@include font_border(#00FFFF);
+      border:1px solid #00FFFF;
+      cursor: pointer;
+    }
+  }
+  .pagePanel{
+    text-align: center;
+  }
+}
+
+::v-deep .el-input__inner{
+  height: 31px;
+}
+::v-deep .el-input__icon{
+  line-height: 31px;
+}
+
+.liveTabs .el-checkbox,.liveTabs .el-radio{
+  color: #ffffff;
+}
+.liveTabs /deep/ .el-select .el-input__inner{
+  background-color: rgba(255,255,255,.4);
+  border: none;
+}
+
+
+.liveTabs /deep/ .el-dialog,.liveTabs /deep/ .el-pager li{
+  background:  transparent!important;
+  color: #ffffff;
+}
+
+.liveTabs /deep/ .el-pagination .btn-next, .liveTabs /deep/ .el-pagination .btn-prev{
+  background:  transparent!important;
+  color: #ffffff;
+}
+.liveTabs /deep/ .el-tabs__header{
+  background:  transparent!important;
+}
+.liveTabs /deep/  .el-tabs__item{
+  border-bottom-left-radius: 9px;
+  border-bottom-right-radius: 9px;
+  background-color:#4C5159 ;
+}
