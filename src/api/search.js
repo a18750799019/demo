@@ -9,10 +9,9 @@ import request from '@/util/request'
 export function postSearch(params) {
   return request({
     method: 'POST',
-    url: '/lifeLine/list',
-    data: {
-      params
-    }
+    url: '/api/shelter/search',
+    data: params
+    
   })
 }
 export function getRainData(params) {

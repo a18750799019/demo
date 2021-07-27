@@ -373,7 +373,7 @@ export default {
       this.colseSubPanel = false;
       this.$store.dispatch("changeCloseSubPanel", false);
       //医院 学校 疏散场所
-      debugger
+      // debugger
       businessApi.getLiveLineList({
         url: this.$api.lifeLine,
         params: {
@@ -690,8 +690,8 @@ export default {
   line-height: 30px;
   background: rgba(3, 13, 32, 0.5);
   position: absolute;
-  bottom: 300px;
-  right: 600px;
+  bottom: 275px;
+  right: 530px;
   .optArea {
     .btnAdd,
     .btnSub,

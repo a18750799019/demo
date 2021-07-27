@@ -49,7 +49,13 @@ module.exports = {
           '^/webapi': ''
         }
       },
-
+      '/api/shelter': {
+        target: 'http://192.168.1.83:18088',
+        //pathRewrite: { '^/demo': '' },
+        ws: false,
+        changeOrigin: true,
+        progress:false
+      },
       '/geoserver': {
         target: 'http://192.168.1.80:20081',
         ws: false,
@@ -70,6 +76,7 @@ module.exports = {
         ws: false,
         changeOrigin: true
       }
+
     }
   }
 }

@@ -2,7 +2,7 @@
 <template>
   <div class="liveTab">
     <div class="left">
-      <div style="width:200px">
+      <div style="width:225px">
         震中降水查询
       </div>
       <el-form :model="form">
@@ -21,7 +21,7 @@
                           value-format="timestamp"></el-date-picker>
         </el-form-item>
       </el-form>
-      <el-button @click="rainSearch(form)">查询</el-button>
+      <el-button type="primary" @click="rainSearch(form)">查询</el-button>
     </div>
     <div class="right">
       <!--
@@ -190,5 +190,15 @@ export default {
 }
 .el-form-item {
   margin-bottom: 0px !important;
+}
+/deep/.el-form-item__label{
+  color:#fff !important;
+}
+.liveTab{
+      background: #405780;
+      width: 1225px;
+}
+/deep/.el-button--primary{
+  margin-left: 25px !important;
 }
 </style>

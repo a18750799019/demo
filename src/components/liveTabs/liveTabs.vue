@@ -10,18 +10,19 @@
                      name="first"
                      class="subTab">
           <div class="searchPanle"
-               style="height:175px;">
-            <el-form>
-              <el-form-item label="活动名称">
+               style="height:20px;">
+            <!-- <el-form>
+              <el-form-item label="   经度">
                 <el-input v-model="form.lng"></el-input>
               </el-form-item>
-              <el-form-item label="活动名称">
+              <el-form-item label="   纬度">
                 <el-input v-model="form.lat"></el-input>
               </el-form-item>
-              <el-form-item label="活动名称">
+              <el-form-item label="   半径">
                 <el-input v-model="form.radius"></el-input>
               </el-form-item>
-            </el-form>
+              <el-button type="primary"   style="width:150px; display:block;margin:0 auto">查询</el-button>
+            </el-form> -->
             <!-- <div class="margin-top-20 margin-left-5">
               <el-radio-group @change="changeRange" v-model="rangeObj">
                 <el-radio style="margin-right:15px;" :label="item.value" :key="i" v-for="(item,i) in rangeOpts">{{item.label}}</el-radio>
@@ -81,20 +82,24 @@
         <el-tab-pane label="地址查询"
                      name="second"
                      class="subTab">
-          <div class="searchPanle addresSearchHead">
-            <el-input class="elInput"
-                      size="small"
-                      ref="searchInput"
-                      v-model="searchInput"
-                      placeholder="请输入地址"></el-input>
-            <el-button class="elButton elButtonSearch"
+          <div class="searchPanle addresSearchHead" style="height:125px;">
+              <el-form ref="form" :model="form" label-width="80px">
+                <el-form-item label="经度">
+                  <el-input v-model="form.lng"></el-input>
+                </el-form-item>
+                <el-form-item label="纬度">
+                  <el-input v-model="form.lng"></el-input>
+                </el-form-item>
+                <el-form-item label="半径" >
+                  <el-input v-model="form.radius"></el-input>
+                  <el-button class="elButton elButtonSearch"
                        size="mini"
                        type="primary"
                        @click="findSearch">查询</el-button>
-            <el-button class="elButtonReset"
-                       size="mini"
-                       type="warn"
-                       @click="clearSearch">清空</el-button>
+                
+                </el-form-item>
+                </el-form>
+                
           </div>
           <div class="listPanel">
             <div v-if="hasSearch && !addressObj.list.length"
@@ -110,15 +115,6 @@
               <div class="rightContent2 inline-block">
                 <div class="ellipsis-one title">{{item.name}}</div>
                 <div class="adressRow ellipsis-one">地址:{{item.address}}</div>
-                <div class="ellipsis-one">查询范围 <el-input oninput="value=value.replace(/[^\d.]/g,'')"
-                            v-model="item.livelineNum"
-                            @click.stop.native="stopPopup"
-                            size="mini"
-                            style="width:70px;"></el-input>公里
-                  <el-button class="liveLine"
-                             size="mini"
-                             @click.stop="showLiveLine(item)">生命线</el-button>
-                </div>
               </div>
             </div>
           </div>
@@ -144,6 +140,7 @@
   </div>
 </template>
 <script>
+import { postSearch } from '@/api/search'
 import { businessApi } from "@/api";
 import distorStatis from "@/components/distorStatis";
 import { addEntityLayer, PointFlicker } from "@/util/ds.cesium.common.js";
@@ -153,9 +150,9 @@ export default {
   data () {
     return {
       form: {
-        lng: '',
-        lat: '',
-        radius: ''
+        lng: '119.28',
+        lat: '26.08',
+        radius: '10'
       },
       isshowDialog: false,
       activeName: "first",
@@ -191,7 +188,7 @@ export default {
   mounted () {
     this.initYearsOpts();
     this.citiesList.list = this.$config.areaRange.concat(this.$areacode.province[0].city);
-    //this.getListInfo()
+    // this.getListInfo()
   },
   methods: {
     close () {
@@ -271,11 +268,11 @@ export default {
       this.getListInfo(_p);
     },
     findSearch () {
-      if (this.searchInput.trim() == "") {
-        this.$message.error("请输入要搜索的地址");
-        this.$refs.searchInput.focus()
-        return;
-      }
+      // if (this.searchInput.trim() == "") {
+      //   this.$message.error("请输入要搜索的地址");
+      //   this.$refs.searchInput.focus()
+      //   return;
+      // }
       this.getAddressListInfo();
     },
     clearSearch () {
@@ -435,37 +432,30 @@ export default {
       })
     },
     //地址查询列表
-    getAddressListInfo () {
-      businessApi.getAddressPaganationList({
-        url: this.$api.addressSearch,
-        params: {
-          keyword: this.searchInput,
-          lonlat: "119.2245,26.049614"
-        }
-      }).then(data => {
-        this.hasSearch = true;
-        this.addressObj.list = data.pois.filter((_, index) => {
-          _.index = this.$config.EnglishLetter[index];
-          _.url = "/imgs/icon-liveLine2.png";
+    async getAddressListInfo () {
+      let str='distance='+ this.form.radius + '&lat=' + this.form.lat + '&lon=' +this.form.lng
+      let res= await postSearch(str)
+      this.hasSearch = true;
+      this.addressObj.list = res.data.objects.filter((_,index)=>{
+          _.index = index +1;
+          _.url="/imgs/icon-liveLine2.png";
           _.iconWidth = 30;
           _.iconHeight = 30;
-          _.lng = _.lonlat.split(" ")[0];
-          _.lat = _.lonlat.split(" ")[1]
+          _.lng = _.lon
           return _;
         });
-        this.addressObj.total = data.pois.length;
-        if (window.dsCesium.viewer) {
+      this.addressObj.total = res.data.objects.length;
+      if(window.dsCesium.viewer){
           window.dsCesium.viewer.removeEntityLayer({
-            layerName: "ali"
+            layerName:"adress"
           });
           window.dsCesium.viewer.addEntityLayer({
-            layerName: "ali",
+            layerName:"adress",
             list: this.addressObj.list,
-            viewer: window.dsCesium.viewer,
+            viewer:  window.dsCesium.viewer,
             billboard: true
           })
         }
-      })
     },
     handleClick () {
       this.$emit("changTab", false)
@@ -480,10 +470,22 @@ export default {
 </script>
 <style lang="scss" scoped src="./liveTabs.scss"></style>
 <style lang="scss" scoped>
+/deep/ .el-input{
+  width:70% !important
+}
 .generated {
   color: blue !important;
 }
 /deep/.el-form-item__label {
-  color: #004b98 !important;
+  color: #fff !important;
+  margin-left: -10px;
+  font-size: unset !important;
+}
+.el-form-item{
+  margin-bottom:0 !important;
+}
+.liveTabs .addresSearchHead .elButton{
+  top:-1px !important;
+  margin: 0 0 0 6px !important;
 }
 </style>
