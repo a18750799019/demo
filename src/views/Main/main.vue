@@ -8,7 +8,8 @@
                  :options="$config.mapInitOpts"
                  :center="$config.center"></ds-cesium>
     </div>
-    <live-tabs ref="liveTabs"
+    <live-tabs v-show="isMessageShow"
+               ref="liveTabs"
                @itemClick="handleItemClick"
                @liveLine="handleLivelineClick"
                @changTab="closeFun"
@@ -28,10 +29,11 @@
               :close="colseSubPanel"
               @closeIshow="closeFun"></left-sub>
 
-    
-    <div class="bottomPanel" >
+    <div class="bottomPanel"
+         v-show="isRainsearchShow">
       <bottom-tab></bottom-tab>
     </div>
+
     <dialog-panel :dialogVisible="report.state"
                   :title="report.title"
                   top="5vh"
@@ -108,6 +110,7 @@
   </div>
 </template>
 <script>
+import { mapState } from 'vuex'
 import bottomTab from "@/components/bottomTab/bottomTab";
 import liveTabs from "@/components/liveTabs/liveTabs";
 import leftSub from "@/components/leftSub/leftSub";
@@ -128,8 +131,7 @@ export default {
     dialogPanel,
     pdfBox
   },
-  props:{
-    isRainserachShow:false
+  props: {
   },
   data () {
     return {
@@ -195,6 +197,11 @@ export default {
       lnglatShowHide: true
 
     }
+  },
+  watch: {
+  },
+  computed: {
+    ...mapState(['isRainsearchShow', 'isMessageShow'])
   },
   mounted () {
     this.user = localStorageSetting("userCount");
@@ -627,7 +634,6 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-
 .mainC {
   height: calc(100% - #{$head-height});
   background: #ecf5ff;
