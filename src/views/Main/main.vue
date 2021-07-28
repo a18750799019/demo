@@ -28,11 +28,9 @@
               :close="colseSubPanel"
               @closeIshow="closeFun"></left-sub>
 
-    <div>aaaaaaaaaaaaaaaaaaaa</div>
-
-    <div class="bottomPanel">
+    
+    <div class="bottomPanel" >
       <bottom-tab></bottom-tab>
-
     </div>
     <dialog-panel :dialogVisible="report.state"
                   :title="report.title"
@@ -129,6 +127,9 @@ export default {
     leftSub,
     dialogPanel,
     pdfBox
+  },
+  props:{
+    isRainserachShow:false
   },
   data () {
     return {
@@ -303,6 +304,7 @@ export default {
       this.leftSub.location = data.address;
       this.leftSub.time = data.seismicTime;
       this.leftSub.level = data.quakeLevel;
+      debugger
       businessApi.getCollectionList({
         url: this.$api.collentionList,
         params: {
@@ -314,9 +316,9 @@ export default {
           v.srcList = [];
           for (let i = 0; i < v.accessory.length; i++) {
             if (v.accessory[i].type == 0) {
-              v.srcList.push(`${this.$config.relativePath}api/static/image/${v.accessory[i].fileName}`)
+              v.srcList.push(`http://122.51.146.178:31349/api/static/image/${v.accessory[i].fileName}`)
             } else {
-              v.videoSrc = `${this.$config.relativePath}api/static/video/${v.accessory[i].fileName}`
+              v.videoSrc = `http://122.51.146.178:31349/api/static/video/${v.accessory[i].fileName}`
             }
           }
           if (v.srcList.length > 0) {
@@ -625,6 +627,7 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+
 .mainC {
   height: calc(100% - #{$head-height});
   background: #ecf5ff;
@@ -683,7 +686,7 @@ export default {
   right: 227px;
 }
 .bottomPanel {
-  width: 700px;
+  width: calc(100% - 350px);
   height: 30px;
   font-size: 13px;
   text-align: center;
@@ -691,7 +694,7 @@ export default {
   background: rgba(3, 13, 32, 0.5);
   position: absolute;
   bottom: 275px;
-  right: 530px;
+  right: 0px;
   .optArea {
     .btnAdd,
     .btnSub,

@@ -39,7 +39,7 @@ module.exports = {
     host: '0.0.0.0',
     // 设置默认端口
     port: 3001,
-
+    disableHostCheck: true,
     proxy: {
       '/webapi': {
         target: 'www.baidu.com/webapi',
@@ -50,7 +50,7 @@ module.exports = {
         }
       },
       '/api/shelter': {
-        target: 'http://192.168.1.83:18088',
+        target: 'http://192.168.1.83:18088 ',
         //pathRewrite: { '^/demo': '' },
         ws: false,
         changeOrigin: true,

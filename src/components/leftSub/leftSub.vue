@@ -5,18 +5,7 @@
       <el-tabs v-model="activeName">
         <el-tab-pane :label="title" name="first">
           
-        </el-tab-pane> 
-        <el-tab-pane label="灾损" name="second" style="padding:0">
-           <el-form ref="form" label-width="20px" class="margin-top-10">
-            <el-form-item v-for="(item,i) in mapCasualtyLossLayer" :key="i">
-            <label class="funSubItem">
-              <el-checkbox @change="toggleZs($event, item)"  v-model="item.checked"></el-checkbox>
-              <el-image class="funSUbImgs" :src="item.url"></el-image>
-              <span>{{item.name}}</span>
-            </label>
-            </el-form-item>
-          </el-form>
-        </el-tab-pane> 
+        </el-tab-pane>
       </el-tabs>
 
     </template>
@@ -350,3 +339,8 @@ export default {
 }
 </script>
 <style lang="scss" scoped src="./leftSub.scss"></style>
+<style>
+  .el-tabs__header .el-tabs__nav .el-tabs__item{
+    width:100% !important
+  }
+</style>

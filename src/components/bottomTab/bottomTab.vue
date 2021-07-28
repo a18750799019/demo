@@ -2,7 +2,7 @@
 <template>
   <div class="liveTab">
     <div class="left">
-      <div style="width:225px">
+      <div >
         震中降水查询
       </div>
       <el-form :model="form">
@@ -13,7 +13,7 @@
         <el-form-item label="震中纬度">
           <el-input v-model="form.lat"></el-input>
         </el-form-item>
-        <el-form-item label="震中经度">
+        <el-form-item label="发震时间">
           <el-date-picker type="date"
                           placeholder="选择日期"
                           v-model="form.date"
@@ -67,14 +67,14 @@ export default {
       rainObj: '',
       i: 0,
       form: {
-        lon: '120.0962',
-        lat: '29.5617',
+        lon: '119.28',
+        lat: '26.08',
         date: new Date()
       },
       res: '',
       dayArray: [],
       raindata: [],
-      datedata: [],
+      datedata: ['00:00','01:00','02:00','03:00','04:00','05:00','06:00','07:00','08:00','09:00','10:00','11:00','12:00','13:00','14:00','15:00','16:00','17:00','18:00','19:00','20:00','21:00','22:00','23:00'],
       testraindata: []
     }
   },
@@ -85,11 +85,14 @@ export default {
     }
   },
   methods: {
+    switchBottom() {
+      this.bottomCtl = !this.bottomCtl;
+    },
     getDateArray (currentDate) {
       this.dayArray = []
       var ary = []
       var date = currentDate
-      for (let i = 0; i <= 144; i += 24) {
+      for (let i = 0; i <= 168; i += 24) {
         // 144是前六天的小时数
         const dateItem = new Date(date.getTime() + i * 60 * 60 * 1000) // 使用当天时间戳减去以前的时间毫秒（小时*分*秒*毫秒）
         const y = dateItem.getFullYear() // 获取年份
@@ -109,14 +112,13 @@ export default {
     },
     async drawDrainChart (id, i) {
       this.raindata = []
-      this.datedata = []
 
       // let data = JSON.parse(this.res)
       // data = data.weather_hourly_1h[0].data
       // console.log(data)
-      for (let index = 0; index < 24; index++) {
-        this.datedata.push(index)
-      }
+      // for (let index = 0; index < 24; index++) {
+      //   this.datedata.push('00:00')
+      // }
       for (let index = i * 24; index < i * 24 + 24; index++) {
         let data = await this.res[index]
         data = await data.pre
@@ -127,6 +129,7 @@ export default {
       this.myChart.setOption({
         title: {
           text: '小时降雨量',
+          left: 'center',
           textStyle: {
             color: '#fff'
           }
@@ -143,6 +146,11 @@ export default {
         },
         yAxis: {
           type: 'value',
+          name: '降水(mm)',
+          nameTextStyle:{
+                         color:"#fff", 
+                         fontSize:12,  
+                     },
           axisLabel: {
             textStyle: {
               color: '#fff',//坐标值得具体的颜色
@@ -174,6 +182,16 @@ export default {
       //this.res = await businessApi.geteaItemDetailList('/rain')
       this.res = this.res.data.weather_hourly_1h[0].data
       this.drawDrainChart('rainEchart', 0)
+      
+          window.dsCesium.viewer.entities.removeById("PointFlicker1");
+          window.dsCesium.viewer.entities.removeById("PointFlicker2");
+      window.dsCesium.viewer.camera.flyTo({
+            destination: window.dsCesium.Cesium.Cartesian3.fromDegrees(
+              this.form.lon,
+              this.form.lat,
+              50000.0
+            )
+          });
       // console.log('res2', res2, date)
     }
   },
@@ -187,17 +205,18 @@ export default {
 <style scoped>
 .timeTabs {
   display: flex;
+  justify-content:space-between;
 }
 .timeTab {
   margin-left: 25px;
 }
 .right {
-  width: 1000px;
+  width: 100%;
   height: 300px;
 }
 .rainEchart {
   width: 80%;
-  height: 300px;
+  height: 225px;
   left: 1100px;
   top: 150px;
   color: chartreuse;
@@ -206,29 +225,42 @@ export default {
   list-style: none;
 }
 .rainEchart1 {
-  width: 80%;
-  height: 300px;
+  height: 100%;
 }
 .liveTab {
   display: flex;
 }
 .left {
-  width: 200px;
+  width: 20%;
+  border-right: 1px solid #D5D8DC;
 }
 .el-input /deep/.el-input__inner {
   height: 25px !important;
 }
 .el-form-item {
   margin-bottom: 0px !important;
+  margin-right: 15px !important;;
 }
 /deep/.el-form-item__label {
   color: #fff !important;
 }
 .liveTab {
   background: #405780;
-  width: 1225px;
+      width: 100%
 }
 /deep/.el-button--primary {
   margin-left: 25px !important;
 }
+  .bottomCtl{
+    position: absolute;
+    width: 26px;
+    height: 66px;
+    right: -26px;
+    top:50%;
+    margin-top:-33px;
+    background-image: url("/imgs/leftSh2.png");
+  }
+  .bottomCtlSwit{
+    background-image: url("/imgs/leftSh1.png");
+  }
 </style>

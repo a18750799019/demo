@@ -75,16 +75,10 @@
     "type":"ReportStatis"
   },{
     "icon": "icon-mnyl.png",
-    "title": "模拟演练",
+    "title": "降水查询",
     "isUse": true,
     "seleted": false,
     "type":"Mock"
-  },{
-    "icon": "icon-xtpz.png",
-    "title": "系统配置",
-    "isUse": true,
-    "seleted": false,
-    "path":"sysconf"
   }],
   "earthquakeLevelType":[{
     "min":0,

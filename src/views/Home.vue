@@ -7,11 +7,8 @@
     </div>
     <div class="right">
       <ul>
-        <li v-for="item in rightMenu" 
-          :class="{'on':item.seleted }"
-          :key="item.id" @click="toggleRightMenu(item)">
-          <img :src="`/imgs/${item.icon}`">
-          <div>{{item.title}}</div>
+        <li >
+          <div @click="isRainsearchShow=!isRainsearchShow">降水查询</div>
         </li>
       </ul>
       <div class="user">
@@ -183,6 +180,7 @@ export default {
   components:{dialogPanel,formConfig,mapDialog},
   data(){
     return {
+      isRainsearchShow:false,
       isshowMapChoose:false,
       areacode:{
         city:[],
@@ -394,27 +392,7 @@ export default {
       }
     },
     toggleRightMenu(item){
-      this.rightMenu = this.rightMenu.map(_=>{
-        _.seleted = false;
-        return _;
-      })
-      item.seleted = true;
-      if(item.id == 4){
-        localStorage.removeItem("userid");
-        this.$router.push("/");
-      } else {
-        if(item.path){
-          this.$router.push({name:item.path})
-        } else {
-          // this.$message.info("模块暂无开发");
-          if(item.type == "Statis") {
-            
-          }else {
-            this[`dialog${item.type}Obj`].state = true;
-            this[`dialog${item.type}Obj`].title = item.title;
-          }
-        }
-      }
+      console.log(item)
     },
     
     closeReportStatisObjReceive(){
